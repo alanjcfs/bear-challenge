@@ -5,4 +5,8 @@ class Employee < ActiveRecord::Base
     orders.reduce(0.0) { |acc, order| acc + order.total_price } /
       orders.reduce(0) { |acc, order| acc + order.num_units } unless orders.empty?
   end
+
+  def to_s
+    name
+  end
 end
