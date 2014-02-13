@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= simple_form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -12,16 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :total_price %><br>
-    <%= f.text_field :total_price %>
+    <%= f.input :total_price %><br>
   </div>
   <div class="field">
-    <%= f.label :num_units %><br>
-    <%= f.number_field :num_units %>
+    <%= f.input :num_units %><br>
   </div>
   <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
+    <%= f.association :employee %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
