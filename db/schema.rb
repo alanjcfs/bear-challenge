@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213203905) do
+ActiveRecord::Schema.define(version: 20140213204334) do
 
   create_table "employees", force: true do |t|
     t.string   "name",        limit: 45
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(version: 20140213203905) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "orders", force: true do |t|
+    t.float    "total_price"
+    t.integer  "num_units"
+    t.integer  "employee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["employee_id"], name: "index_orders_on_employee_id"
 
 end
