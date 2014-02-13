@@ -4,6 +4,7 @@ BearChallenge::Application.routes.draw do
   resources :employees do
     collection do
       get 'average_total_price'
+      get 'average_unit_price'
     end
   end
 

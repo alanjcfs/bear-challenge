@@ -1,0 +1,33 @@
+<h1>Listing employees with average unit price</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Average Unit Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.average_unit_price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Hide Average Unit Price', employees_path %>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>
+
+<br>
+
+<%= link_to 'Create New Order', new_order_path %>
+
+<%= link_to 'Show Orders', orders_path %>

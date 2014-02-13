@@ -11,6 +11,10 @@ class EmployeesController < ApplicationController
     @employees = Employee.includes(:orders)
   end
 
+  def average_unit_price
+    @employees = Employee.includes(:orders)
+  end
+
   # GET /employees/1
   # GET /employees/1.json
   def show
