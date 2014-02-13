@@ -1,7 +1,11 @@
 BearChallenge::Application.routes.draw do
   resources :orders
 
-  resources :employees
+  resources :employees do
+    collection do
+      get 'average_total_price'
+    end
+  end
 
   root to: "employees#index"
 
