@@ -46,4 +46,11 @@ class EmployeesControllerTest < ActionController::TestCase
 
     assert_redirected_to employees_path
   end
+
+  test "should get average prices" do
+    get :average_total_price
+
+    assert_response :success
+    assert_not_nil assigns(:employees)
+  end
 end
